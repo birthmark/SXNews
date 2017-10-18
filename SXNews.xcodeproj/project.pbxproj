@@ -87,6 +87,7 @@
 		1DE822B91C5B5C4A00E965C1 /* SXNewsDetailBottomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE822B71C5B5C4A00E965C1 /* SXNewsDetailBottomCell.m */; };
 		1DE822BA1C5B5C4A00E965C1 /* SXNewsDetailBottomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DE822B81C5B5C4A00E965C1 /* SXNewsDetailBottomCell.xib */; };
 		1DE822C01C60577900E965C1 /* SXSimilarNewsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE822BF1C60577900E965C1 /* SXSimilarNewsEntity.m */; };
+		28F0BEF31F97768A0073D5A4 /* NSString+JSONUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F0BEF11F9776890073D5A4 /* NSString+JSONUtils.m */; };
 		C892E60B71DE5A62030B671E /* libPods-SXNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD72890D81DD8F096FF9C643 /* libPods-SXNews.a */; };
 /* End PBXBuildFile section */
 
@@ -219,6 +220,8 @@
 		1DE822BE1C60577900E965C1 /* SXSimilarNewsEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXSimilarNewsEntity.h; sourceTree = "<group>"; };
 		1DE822BF1C60577900E965C1 /* SXSimilarNewsEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXSimilarNewsEntity.m; sourceTree = "<group>"; };
 		1EA27A32CAAE4D6B0DA76ECA /* Pods-SXNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SXNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SXNews/Pods-SXNews.debug.xcconfig"; sourceTree = "<group>"; };
+		28F0BEF11F9776890073D5A4 /* NSString+JSONUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+JSONUtils.m"; sourceTree = "<group>"; };
+		28F0BEF21F97768A0073D5A4 /* NSString+JSONUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+JSONUtils.h"; sourceTree = "<group>"; };
 		CD66054F3E49551E9CE6E239 /* Pods-SXNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SXNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-SXNews/Pods-SXNews.release.xcconfig"; sourceTree = "<group>"; };
 		DD72890D81DD8F096FF9C643 /* libPods-SXNews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SXNews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -291,6 +294,8 @@
 		1D25EA371C8D69E4009AFE2E /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				28F0BEF21F97768A0073D5A4 /* NSString+JSONUtils.h */,
+				28F0BEF11F9776890073D5A4 /* NSString+JSONUtils.m */,
 				1D25EA381C8D69E4009AFE2E /* NSString+Base64.h */,
 				1D25EA391C8D69E4009AFE2E /* NSString+Base64.m */,
 				1D25EA3A1C8D69E4009AFE2E /* SXAdManager.h */,
@@ -699,8 +704,8 @@
 				TargetAttributes = {
 					1D2A59041A700822001F9B8E = {
 						CreatedOnToolsVersion = 6.0.1;
-						DevelopmentTeam = 4HW3B6PMKD;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = 38347LA2XG;
+						ProvisioningStyle = Automatic;
 					};
 					1D2A591D1A700822001F9B8E = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -789,7 +794,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		54202EADA32091BF00AD9FB7 /* [CP] Copy Pods Resources */ = {
@@ -846,6 +851,7 @@
 				1D007F5A1B6D151D00EA119C /* SXWeatherEntity.m in Sources */,
 				1D25EA4A1C8D69E4009AFE2E /* UIView+Frame.m in Sources */,
 				1D0AC8321A73C66200EEF963 /* SXDetailPage.m in Sources */,
+				28F0BEF31F97768A0073D5A4 /* NSString+JSONUtils.m in Sources */,
 				1D1C4A461B77257300CE3E01 /* SXWeatherItemView.m in Sources */,
 				1D007F5D1B6D155B00EA119C /* SXWeatherDetailEntity.m in Sources */,
 				1D58EEC81A70924A00411E39 /* SXNewsEntity.m in Sources */,
@@ -993,8 +999,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Wei Feng Hou (P4XREMZX86)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 4HW3B6PMKD;
+				DEVELOPMENT_TEAM = 38347LA2XG;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1007,8 +1014,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shangxian.sxnews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b257564f-9d82-4034-87a3-18a0d4029e73";
-				PROVISIONING_PROFILE_SPECIFIER = ios_development_sunli;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -1020,8 +1027,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Wei Feng Hou (P4XREMZX86)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 38347LA2XG;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1034,6 +1042,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shangxian.sxnews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -1124,6 +1133,7 @@
 				1DF597F91DF901670090BF75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
